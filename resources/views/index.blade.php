@@ -21,21 +21,6 @@
         content="konstruksi, manajemen proyek, desain konstruksi, perusahaan kontraktor, proyek pembangunan, PT Narazel Berkah Selamat">
     <meta name="author" content="PT Narazel Berkah Selamat">
 
-    <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title" content="{{ $data['companyName'] }} - {{ $data['companyTagline'] }}">
-    <meta property="og:description"
-        content="PT Narazel Berkah Selamat adalah perusahaan kontraktor yang berdedikasi dalam memberikan solusi konstruksi berkualitas tinggi.">
-    <meta property="og:image" content="{{ asset($data['logo']) }}">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $data['companyName'] }} - {{ $data['companyTagline'] }}">
-    <meta name="twitter:description"
-        content="PT Narazel Berkah Selamat adalah perusahaan kontraktor yang berdedikasi dalam memberikan solusi konstruksi berkualitas tinggi.">
-    <meta name="twitter:image" content="{{ asset($data['logo']) }}">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -47,31 +32,29 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-poppins text-cp-black">
+<body>
 
     <!-- Header -->
-    <header id="header" class="bg-[#F6F7FA] relative overflow-hidden py-10">
-        <div class="container max-w-[1130px] mx-auto relative z-10 px-4 lg:px-0">
-            <div id="navbar-wrapper" class="relative">
-                <nav id="navbar"
-                    class="flex justify-between items-center bg-white p-4 lg:p-6 rounded-[20px] shadow-xl transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <img src="{{ asset($data['logo']) }}" class="h-10 lg:h-12" alt="logo">
-                        <div>
-                            <p class="text-lg lg:text-xl font-bold">{{ $data['companyName'] }}</p>
-                            <p class="text-xs lg:text-sm text-gray-500">{{ $data['companyTagline'] }}</p>
-                        </div>
+    <header class="bg-[#F6F7FA] relative overflow-hidden py-10">
+        <div class="container-main relative z-10">
+            <nav
+                class="flex justify-between items-center bg-white p-4 lg:p-6 rounded-[20px] shadow-xl transition-all duration-300">
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset($data['logo']) }}" class="h-10 lg:h-12" alt="logo">
+                    <div>
+                        <p class="text-lg lg:text-xl font-bold">{{ $data['companyName'] }}</p>
+                        <p class="text-xs lg:text-sm text-gray-500">{{ $data['companyTagline'] }}</p>
                     </div>
-                    <ul class="hidden lg:flex gap-6">
-                        <li><a href="#tentang-kami" class="font-semibold text-gray-800 hover:text-nbs1">Tentang Kami</a>
-                        </li>
-                        <li><a href="#layanan" class="font-semibold text-gray-800 hover:text-nbs1">Layanan</a></li>
-                        <li><a href="#galeri" class="font-semibold text-gray-800 hover:text-nbs1">Galeri</a></li>
-                    </ul>
-                    <a href="#kontak"
-                        class="hidden lg:block bg-nbs1 hover:shadow-[0_12px_30px_0_#312ECB66] text-white px-4 py-2 rounded-md font-semibold">Kontak</a>
-                </nav>
-            </div>
+                </div>
+                <ul class="hidden lg:flex gap-6">
+                    <li><a href="#tentang-kami" class="font-semibold text-gray-800 hover:text-nbs-500">Tentang Kami</a>
+                    </li>
+                    <li><a href="#layanan" class="font-semibold text-gray-800 hover:text-nbs-500">Layanan</a></li>
+                    <li><a href="#galeri" class="font-semibold text-gray-800 hover:text-nbs-500">Galeri</a></li>
+                </ul>
+                <a href="#kontak"
+                    class="hidden lg:block bg-nbs-500 hover:shadow-[0_12px_30px_0_#2e74e2] text-white px-4 py-2 rounded-md font-semibold">Kontak</a>
+            </nav>
             <div class="flex flex-col gap-[20px] lg:gap-[30px] mt-10 lg:mt-20 pb-20 text-center lg:text-left">
                 <div
                     class="flex justify-center lg:justify-start items-center bg-white p-2 lg:p-[8px_16px] gap-[10px] rounded-full w-fit mx-auto lg:mx-0">
@@ -86,16 +69,16 @@
                         {{ $data['hero']['heading'] }}
                     </h1>
                     <p
-                        class="text-cp-light-grey leading-[26px] lg:leading-[30px] max-w-full lg:max-w-[437px] mx-auto lg:mx-0 text-justify">
+                        class="text-gray-500 leading-[26px] lg:leading-[30px] max-w-full lg:max-w-[437px] mx-auto lg:mx-0 text-justify">
                         {{ $data['hero']['subheading'] }}
                     </p>
                 </div>
                 <div class="flex justify-center lg:justify-start items-center gap-4">
                     <a href="{{ $data['hero']['cta_link'] }}"
-                        class="bg-nbs1 p-4 lg:p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">{{ $data['hero']['cta'] }}</a>
+                        class="bg-nbs-500 p-4 lg:p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#2e74e2] transition-all duration-300 font-bold text-white">{{ $data['hero']['cta'] }}</a>
                     <!-- Add Kontak Button in Hero Section for Mobile -->
                     <a href="#kontak"
-                        class="lg:hidden bg-nbs1 p-4 lg:p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Kontak</a>
+                        class="lg:hidden bg-nbs-500 p-4 lg:p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#2e74e2] transition-all duration-300 font-bold text-white">Kontak</a>
                 </div>
             </div>
         </div>
@@ -104,18 +87,20 @@
         </div>
     </header>
 
+    <hr id="tentang-kami">
+
     <!-- About Section -->
-    <section id="tentang-kami" class="container max-w-[1130px] mx-auto flex flex-col gap-10 my-20 px-4 lg:px-0">
+    <section class="container-main flex flex-col gap-10 my-20">
         <div class="product flex flex-wrap justify-center items-center gap-[60px]">
             <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
                 <img src="{{ asset($data['about']['image']) }}" class="w-full h-full object-contain" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-                <p class="badge w-fit bg-cp-pale-blue text-nbs1 p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                <p class="badge w-fit bg-nbs-100 text-nbs-500 p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     TENTANG KAMI</p>
                 <div class="flex flex-col gap-[10px]">
                     <h2 class="font-bold text-4xl leading-[45px]">{{ $data['about']['title'] }}</h2>
-                    <p class="leading-[26px] font-semibold text-cp-light-grey text-justify">
+                    <p class="leading-[26px] font-semibold text-gray-500 text-justify">
                         {{ $data['about']['description'] }}</p>
                 </div>
             </div>
@@ -123,11 +108,10 @@
 
         <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
             <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-                <img src="{{ asset($data['vision']['image']) }}" class="w-full h-full object-contain"
-                    alt="thumbnail">
+                <img src="{{ asset($data['vision']['image']) }}" class="w-full h-full object-contain" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-                <p class="badge w-fit bg-cp-pale-blue text-nbs1 p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                <p class="badge w-fit bg-nbs-100 text-nbs-500 p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     VISI</p>
                 <div class="flex flex-col gap-5">
                     <h2 class="font-bold text-4xl leading-[45px]">{{ $data['vision']['title'] }}</h2>
@@ -136,7 +120,7 @@
                             <div class="w-6 h-6 flex shrink-0">
                                 <img src="{{ asset('images/icons/tick-circle.svg') }}" alt="icon">
                             </div>
-                            <p class="leading-[26px] font-semibold text-cp-light-grey">{{ $point }}</p>
+                            <p class="leading-[26px] font-semibold text-gray-500">{{ $point }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -149,7 +133,7 @@
                     alt="thumbnail">
             </div>
             <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-                <p class="badge w-fit bg-cp-pale-blue text-nbs1 p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                <p class="badge w-fit bg-nbs-100 text-nbs-500 p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     MISI</p>
                 <div class="flex flex-col gap-5">
                     <h2 class="font-bold text-4xl leading-[45px]">{{ $data['mission']['title'] }}</h2>
@@ -158,7 +142,7 @@
                             <div class="w-6 h-6 flex shrink-0">
                                 <img src="{{ asset('images/icons/tick-circle.svg') }}" alt="icon">
                             </div>
-                            <p class="leading-[26px] font-semibold text-cp-light-grey">{{ $point }}</p>
+                            <p class="leading-[26px] font-semibold text-gray-500">{{ $point }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -166,19 +150,19 @@
         </div>
     </section>
 
-    <hr>
+    <hr id="layanan">
 
     <!-- Services Section -->
-    <section id="layanan" class="container max-w-[1130px] mx-auto flex flex-col gap-10 my-20 px-4 lg:px-0">
+    <section class="container-main flex flex-col gap-10 my-20">
         <div class="flex flex-col gap-[14px] items-center">
-            <p class="badge w-fit bg-cp-pale-blue text-nbs1 p-[8px_16px] rounded-full uppercase font-bold text-sm">
+            <p class="badge w-fit bg-nbs-100 text-nbs-500 p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 LAYANAN</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">Layanan Terbaik Kami</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             @foreach ($data['services'] as $service)
                 <div id="{{ $service['id'] }}"
-                    class="card flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-nbs1 transition-all duration-300">
+                    class="card flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-nbs-500 transition-all duration-300">
                     <div class="thumbnail h-[200px] w-full overflow-hidden">
                         <img src="{{ asset($service['thumbnail']) }}" class="object-cover w-full h-full"
                             alt="{{ $service['title'] }}">
@@ -198,12 +182,12 @@
         </div>
     </section>
 
-    <hr>
+    <hr id="galeri">
 
     <!-- Gallery Section -->
-    <section id="galeri" class="container max-w-[1130px] mx-auto flex flex-col gap-10 my-20 px-4 lg:px-0">
+    <section class="container-main flex flex-col gap-10 my-20">
         <div class="flex flex-col gap-[14px] items-center">
-            <p class="badge w-fit bg-cp-pale-blue text-nbs1 p-[8px_16px] rounded-full uppercase font-bold text-sm">
+            <p class="badge w-fit bg-nbs-100 text-nbs-500 p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 GALERI</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">Galeri Proyek Kami</h2>
         </div>
@@ -218,23 +202,23 @@
         </div>
     </section>
 
-    <hr>
+    <hr id="faq">
 
     <!-- FAQ Section -->
-    <section id="faq" class="container max-w-[1130px] mx-auto flex flex-col gap-10 my-20 px-4 lg:px-0">
+    <section class="container-main flex flex-col gap-10 my-20">
         <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
             <div class="flex flex-col gap-[30px] text-center lg:text-left">
                 <div class="flex flex-col gap-[10px]">
                     <h2 class="font-bold text-4xl leading-[45px]">Pertanyaan yang Sering Diajukan</h2>
                 </div>
-                <a href="#kontak" class="p-5 bg-nbs1 rounded-xl text-white w-fit font-bold">Hubungi Kami</a>
+                <a href="#kontak" class="p-5 bg-nbs-500 rounded-xl text-white w-fit font-bold">Hubungi Kami</a>
             </div>
             <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
                 @foreach ($data['faq'] as $faq)
                     <div class="flex flex-col p-5 rounded-2xl bg-gray-200 w-full">
                         <div class="flex flex-col gap-1">
                             <span class="font-bold text-lg leading-[27px] text-justify">{{ $faq['question'] }}</span>
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px] text-justify">{{ $faq['answer'] }}
+                            <p class="leading-[30px] text-gray-500 pt-[14px] text-justify">{{ $faq['answer'] }}
                             </p>
                         </div>
                     </div>
@@ -243,15 +227,14 @@
         </div>
     </section>
 
-
-    <hr>
+    <hr id="kontak">
 
     <!-- Contact Section -->
-    <section id="kontak" class="container max-w-[1130px] mx-auto flex flex-col gap-10 my-20 px-4 lg:px-0">
+    <section class="container-main flex flex-col gap-10 my-20">
         <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
             <div class="flex flex-col gap-6 lg:w-1/2">
                 <h2 class="font-bold text-4xl leading-tight">Hubungi Kami</h2>
-                <p class="text-cp-light-grey leading-relaxed text-justify">Jika Anda memiliki pertanyaan atau ingin
+                <p class="text-gray-500 leading-relaxed text-justify">Jika Anda memiliki pertanyaan atau ingin
                     memulai
                     proyek baru, kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui formulir di
                     bawah ini atau melalui detail kontak kami.</p>
@@ -261,7 +244,7 @@
                             <img src="{{ asset('images/icons/call-black.svg') }}"
                                 class="w-full h-full object-contain" alt="phone">
                         </div>
-                        <p class="font-bold text-cp-black">
+                        <p class="font-bold text-black">
                             <a href="tel:{{ $data['contact']['phone'] }}">
                                 {{ $data['contact']['phone'] }}
                             </a>
@@ -272,7 +255,7 @@
                             <img src="{{ asset('images/icons/sms.svg') }}" class="w-full h-full object-contain"
                                 alt="email">
                         </div>
-                        <p class="font-bold text-cp-black">
+                        <p class="font-bold text-black">
                             <a href="mailto:{{ $data['contact']['email'] }}">
                                 {{ $data['contact']['email'] }}
                             </a>
@@ -281,19 +264,19 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2">
-                <form action="{{ route('contact.send') }}" method="POST" class="flex flex-col gap-4">
+                <form action="" method="POST" class="flex flex-col gap-4">
                     @csrf
                     <input type="text" name="name" placeholder="Nama Anda"
-                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs1"
+                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs-500"
                         required>
                     <input type="email" name="email" placeholder="Email Anda"
-                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs1"
+                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs-500"
                         required>
                     <textarea name="message" placeholder="Pesan Anda"
-                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs1"
+                        class="p-4 bg-white rounded-xl border border-[#E8EAF2] focus:outline-none focus:ring-2 focus:ring-nbs-500"
                         rows="5" required></textarea>
                     <button type="submit"
-                        class="bg-nbs1 py-4 rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Kirim
+                        class="bg-nbs-500 py-4 rounded-xl hover:shadow-[0_12px_30px_0_#2e74e2] transition-all duration-300 font-bold text-white">Kirim
                         Pesan</button>
                 </form>
             </div>
@@ -302,8 +285,7 @@
 
     <!-- Footer -->
     <footer class="bg-nbs2 w-full py-10">
-        <div
-            class="container max-w-[1130px] mx-auto flex flex-col md:flex-row justify-between items-start gap-10 px-4 lg:px-0">
+        <div class="container-main flex flex-col md:flex-row justify-between items-start gap-10">
             <!-- Company Info -->
             <div class="flex flex-col gap-4">
                 <div class="flex items-center gap-3">
@@ -336,7 +318,7 @@
                 <p class="font-bold text-lg text-white">Layanan</p>
                 @foreach ($data['services'] as $service)
                     <a href="#{{ $service['id'] }}"
-                        class="text-white hover:text-cp-light-grey transition-all duration-300">
+                        class="text-white hover:text-gray-500 transition-all duration-300">
                         {{ $service['title'] }}
                     </a>
                 @endforeach
@@ -344,17 +326,17 @@
 
             <div class="flex flex-col gap-3">
                 <p class="font-bold text-lg text-white">Tentang Kami</p>
-                <a href="#tentang-kami" class="text-white hover:text-cp-light-grey transition-all duration-300">
+                <a href="#tentang-kami" class="text-white hover:text-gray-500 transition-all duration-300">
                     Profil Perusahaan
                 </a>
-                <a href="#visi" class="text-white hover:text-cp-light-grey transition-all duration-300">Visi</a>
-                <a href="#misi" class="text-white hover:text-cp-light-grey transition-all duration-300">Misi</a>
-                <a href="#galeri" class="text-white hover:text-cp-light-grey transition-all duration-300">Galeri</a>
+                <a href="#visi" class="text-white hover:text-gray-500 transition-all duration-300">Visi</a>
+                <a href="#misi" class="text-white hover:text-gray-500 transition-all duration-300">Misi</a>
+                <a href="#galeri" class="text-white hover:text-gray-500 transition-all duration-300">Galeri</a>
             </div>
         </div>
 
         <div
-            class="container max-w-[1130px] mx-auto mt-10 border-t border-white pt-5 flex flex-col md:flex-row justify-between items-center gap-4 px-4 lg:px-0">
+            class="container-main mt-10 border-t border-white pt-5 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- Social Media Icons -->
             <div class="flex items-center gap-4">
                 <a href="{{ $data['social_media']['youtube'] }}">
@@ -377,27 +359,6 @@
             <p class="text-white text-xs lg:text-sm text-center">&copy; 2024 PT Narazel Berkah Selamat</p>
         </div>
     </footer>
-
-    @stack('before-scripts')
-    <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const navbarWrapper = document.getElementById('navbar-wrapper');
-            const header = document.getElementById('header');
-            const sticky = header.offsetHeight;
-
-            if (window.pageYOffset > sticky) {
-                navbarWrapper.style.height = `${navbar.offsetHeight}px`; // Preserve the height of the navbar space
-                navbar.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'mx-auto', 'z-50', 'shadow-lg');
-                navbar.classList.remove('rounded-[20px]');
-            } else {
-                navbarWrapper.style.height = 'auto'; // Reset the height
-                navbar.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'mx-auto', 'z-50', 'shadow-lg');
-                navbar.classList.add('rounded-[20px]');
-            }
-        });
-    </script>
-
 
 </body>
 

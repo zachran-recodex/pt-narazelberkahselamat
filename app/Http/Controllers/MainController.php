@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-
 class MainController extends Controller
 {
     /**
@@ -141,33 +138,5 @@ class MainController extends Controller
         ];
 
         return view('index', compact('data'));
-    }
-
-    /**
-     * Handle the contact form submission.
-     */
-    public function sendContactForm(Request $request)
-    {
-        // Validasi input
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'message' => 'required|string',
-        ]);
-
-        // Kirim email
-        $contactData = [
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'message' => $request->input('message'),
-        ];
-
-        Mail::send('emails.contact', $contactData, function ($message) use ($contactData) {
-            $message->to('info@pt-narazelberkahselamat.com')
-                ->subject('Pesan Baru dari ' . $contactData['name']);
-        });
-
-        // Redirect atau berikan respon
-        return back()->with('success', 'Pesan Anda telah terkirim! Kami akan menghubungi Anda segera.');
     }
 }
